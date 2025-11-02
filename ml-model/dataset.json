@@ -1,0 +1,285 @@
+{
+  "categories": ["Water", "Electricity", "Road", "Garbage", "Others"],
+  "training_data": [
+    {
+      "text": "Water supply is not coming since morning",
+      "category": "Water"
+    },
+    {
+      "text": "Pipe burst in the street flooding the area",
+      "category": "Water"
+    },
+    {
+      "text": "No water in taps for 3 days",
+      "category": "Water"
+    },
+    {
+      "text": "Leaking water pipe near my house",
+      "category": "Water"
+    },
+    {
+      "text": "Water pressure is very low",
+      "category": "Water"
+    },
+    {
+      "text": "Dirty water coming from taps",
+      "category": "Water"
+    },
+    {
+      "text": "Water tank is empty and not refilling",
+      "category": "Water"
+    },
+    {
+      "text": "Sewage water overflowing on street",
+      "category": "Water"
+    },
+    {
+      "text": "Water supply timing is irregular",
+      "category": "Water"
+    },
+    {
+      "text": "Underground water leak causing road damage",
+      "category": "Water"
+    },
+    {
+      "text": "Power outage in our area since yesterday",
+      "category": "Electricity"
+    },
+    {
+      "text": "Street light not working for a week",
+      "category": "Electricity"
+    },
+    {
+      "text": "Electricity wire hanging dangerously low",
+      "category": "Electricity"
+    },
+    {
+      "text": "Frequent power cuts every hour",
+      "category": "Electricity"
+    },
+    {
+      "text": "Electric pole tilted and may fall",
+      "category": "Electricity"
+    },
+    {
+      "text": "Transformer making loud noise and sparking",
+      "category": "Electricity"
+    },
+    {
+      "text": "No electricity for more than 12 hours",
+      "category": "Electricity"
+    },
+    {
+      "text": "Streetlight flickering and needs replacement",
+      "category": "Electricity"
+    },
+    {
+      "text": "Exposed electrical wires after storm",
+      "category": "Electricity"
+    },
+    {
+      "text": "Electricity meter not working properly",
+      "category": "Electricity"
+    },
+    {
+      "text": "Large pothole on main road causing accidents",
+      "category": "Road"
+    },
+    {
+      "text": "Road completely damaged and needs repair",
+      "category": "Road"
+    },
+    {
+      "text": "Broken pavement making walking difficult",
+      "category": "Road"
+    },
+    {
+      "text": "Road construction debris blocking traffic",
+      "category": "Road"
+    },
+    {
+      "text": "Cracks appearing on the highway",
+      "category": "Road"
+    },
+    {
+      "text": "Waterlogged road after rain making it impassable",
+      "category": "Road"
+    },
+    {
+      "text": "Speed breaker damaged and dangerous",
+      "category": "Road"
+    },
+    {
+      "text": "Road signage missing at intersection",
+      "category": "Road"
+    },
+    {
+      "text": "Asphalt wearing off exposing gravel",
+      "category": "Road"
+    },
+    {
+      "text": "Traffic signals not working at junction",
+      "category": "Road"
+    },
+    {
+      "text": "Garbage not collected for 5 days",
+      "category": "Garbage"
+    },
+    {
+      "text": "Overflowing dustbin attracting rats and flies",
+      "category": "Garbage"
+    },
+    {
+      "text": "Illegal dumping of waste near residential area",
+      "category": "Garbage"
+    },
+    {
+      "text": "Garbage truck missed our street this week",
+      "category": "Garbage"
+    },
+    {
+      "text": "Foul smell from accumulated trash",
+      "category": "Garbage"
+    },
+    {
+      "text": "Broken garbage bin needs replacement",
+      "category": "Garbage"
+    },
+    {
+      "text": "Construction debris dumped on footpath",
+      "category": "Garbage"
+    },
+    {
+      "text": "No garbage collection service in our area",
+      "category": "Garbage"
+    },
+    {
+      "text": "Litter scattered all over the park",
+      "category": "Garbage"
+    },
+    {
+      "text": "Waste segregation bins are missing",
+      "category": "Garbage"
+    },
+    {
+      "text": "Stray dogs creating nuisance",
+      "category": "Others"
+    },
+    {
+      "text": "Noise pollution from nearby construction",
+      "category": "Others"
+    },
+    {
+      "text": "Tree fallen on road blocking passage",
+      "category": "Others"
+    },
+    {
+      "text": "Public toilet in bad condition",
+      "category": "Others"
+    },
+    {
+      "text": "Park equipment broken and unsafe for children",
+      "category": "Others"
+    },
+    {
+      "text": "Encroachment on public footpath",
+      "category": "Others"
+    },
+    {
+      "text": "Bus stop shelter damaged",
+      "category": "Others"
+    },
+    {
+      "text": "Public water fountain not working",
+      "category": "Others"
+    },
+    {
+      "text": "Illegal parking blocking entrance",
+      "category": "Others"
+    },
+    {
+      "text": "Graffiti on public property walls",
+      "category": "Others"
+    },
+    {
+      "text": "Tap water has bad smell and taste",
+      "category": "Water"
+    },
+    {
+      "text": "Water connection request pending for months",
+      "category": "Water"
+    },
+    {
+      "text": "Power fluctuation damaging appliances",
+      "category": "Electricity"
+    },
+    {
+      "text": "Electric meter reading incorrect",
+      "category": "Electricity"
+    },
+    {
+      "text": "Road divider broken after accident",
+      "category": "Road"
+    },
+    {
+      "text": "Street name board missing",
+      "category": "Road"
+    },
+    {
+      "text": "Medical waste improperly disposed",
+      "category": "Garbage"
+    },
+    {
+      "text": "Plastic bags clogging drainage",
+      "category": "Garbage"
+    },
+    {
+      "text": "Drainage blocked causing waterlogging",
+      "category": "Water"
+    },
+    {
+      "text": "Manhole cover missing on road",
+      "category": "Road"
+    },
+    {
+      "text": "Streetlight pole bent and unsafe",
+      "category": "Electricity"
+    },
+    {
+      "text": "Garbage burning causing air pollution",
+      "category": "Garbage"
+    },
+    {
+      "text": "Public bench vandalized in park",
+      "category": "Others"
+    },
+    {
+      "text": "Traffic congestion due to poor road design",
+      "category": "Road"
+    },
+    {
+      "text": "Water meter not installed after request",
+      "category": "Water"
+    },
+    {
+      "text": "Electric bill discrepancy needs correction",
+      "category": "Electricity"
+    },
+    {
+      "text": "Recycling bin overflowing with waste",
+      "category": "Garbage"
+    },
+    {
+      "text": "Pedestrian crossing faded and invisible",
+      "category": "Road"
+    },
+    {
+      "text": "Pipeline work left incomplete",
+      "category": "Water"
+    },
+    {
+      "text": "Solar streetlights not working",
+      "category": "Electricity"
+    }
+  ]
+}

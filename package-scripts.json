@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:studio": "prisma studio",
+    "ml:train": "cd ml-model && node train.js",
+    "ml:predict": "cd ml-model && node predict.js",
+    "ml:setup": "mkdir -p public/ml-model && cp -r ml-model/trained-model/* public/ml-model/"
+  }
+}

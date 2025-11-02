@@ -1,0 +1,131 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  CITIZEN
+  WORKER
+  OFFICER
+  ADMIN
+}
+
+enum ComplaintCategory {
+  ROAD
+  WATER
+  GARBAGE
+  ELECTRICITY
+  DRAINAGE
+  STREET_LIGHT
+  OTHER
+}
+
+enum ComplaintStatus {
+  PENDING
+  ASSIGNED
+  IN_PROGRESS
+  COMPLETED
+  REJECTED
+}
+
+enum ComplaintPriority {
+  LOW
+  MEDIUM
+  HIGH
+  URGENT
+}
+
+model User {
+  id            String      @id @default(cuid())
+  phoneNumber   String?     @unique
+  name          String?
+  email         String?     @unique
+  role          UserRole    @default(CITIZEN)
+  
+  // Firebase Authentication (for Citizens only)
+  firebaseUid   String?     @unique
+  
+  // Prisma-based Authentication (for Officers, Workers, Admins)
+  employeeId    String?     @unique  // Office ID, Worker ID, or Admin ID
+  password      String?              // Hashed password
+  
+  photoURL      String?
+  isActive      Boolean     @default(true)
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  // Relations
+  complaints    Complaint[] @relation("UserComplaints")
+  assignments   Assignment[] @relation("WorkerAssignments")
+  officerAssignments Assignment[] @relation("OfficerAssignments")
+  
+  @@index([phoneNumber])
+  @@index([email])
+  @@index([employeeId])
+  @@index([role])
+}
+
+model Complaint {
+  id            String              @id @default(cuid())
+  title         String
+  description   String
+  category      ComplaintCategory
+  status        ComplaintStatus     @default(PENDING)
+  priority      ComplaintPriority   @default(MEDIUM)
+  location      String?
+  latitude      Float?
+  longitude     Float?
+  mediaUrls     String?             // JSON string of photo/video URLs
+  isAiCategorized Boolean           @default(false)
+  citizenId     String
+  createdAt     DateTime            @default(now())
+  updatedAt     DateTime            @updatedAt
+  resolvedAt    DateTime?
+
+  // Relations
+  citizen       User                @relation("UserComplaints", fields: [citizenId], references: [id], onDelete: Cascade)
+  assignments   Assignment[]
+  workProofs    WorkProof[]
+  
+  @@index([citizenId])
+  @@index([status])
+  @@index([category])
+  @@index([createdAt])
+}
+
+model Assignment {
+  id            String      @id @default(cuid())
+  complaintId   String
+  workerId      String
+  officerId     String
+  assignedAt    DateTime    @default(now())
+  deadline      DateTime?
+  notes         String?
+  
+  // Relations
+  complaint     Complaint   @relation(fields: [complaintId], references: [id], onDelete: Cascade)
+  worker        User        @relation("WorkerAssignments", fields: [workerId], references: [id], onDelete: Cascade)
+  officer       User        @relation("OfficerAssignments", fields: [officerId], references: [id], onDelete: Cascade)
+  
+  @@index([complaintId])
+  @@index([workerId])
+  @@index([officerId])
+}
+
+model WorkProof {
+  id            String      @id @default(cuid())
+  complaintId   String
+  beforePhotos  String?     // JSON string of photo URLs
+  afterPhotos   String?     // JSON string of photo URLs
+  description   String?
+  uploadedAt    DateTime    @default(now())
+  
+  // Relations
+  complaint     Complaint   @relation(fields: [complaintId], references: [id], onDelete: Cascade)
+  
+  @@index([complaintId])
+}

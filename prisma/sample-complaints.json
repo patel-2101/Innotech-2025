@@ -1,0 +1,202 @@
+[
+  {
+    "title": "Street light not working near bus stop",
+    "description": "The street light at MG Road bus stop has been non-functional for the past 3 days. This is causing safety issues for commuters during evening hours.",
+    "category": "ELECTRICITY",
+    "status": "IN_PROGRESS",
+    "priority": "HIGH",
+    "location": "MG Road Bus Stop, Bangalore",
+    "citizenName": "Priya Sharma",
+    "createdAt": "2025-10-28T10:30:00Z"
+  },
+  {
+    "title": "Large pothole on main road",
+    "description": "There is a massive pothole near Indiranagar Metro Station that has been growing larger. Multiple vehicles have been damaged, and it poses a serious accident risk.",
+    "category": "ROAD",
+    "status": "PENDING",
+    "priority": "URGENT",
+    "location": "Indiranagar Metro Station, 100 Feet Road",
+    "citizenName": "Amit Patel",
+    "createdAt": "2025-10-30T14:20:00Z"
+  },
+  {
+    "title": "No water supply since morning",
+    "description": "Our entire street in JP Nagar has not received water supply since 6 AM today. This is affecting around 50 households.",
+    "category": "WATER",
+    "status": "ASSIGNED",
+    "priority": "URGENT",
+    "location": "JP Nagar 7th Phase, 5th Cross",
+    "citizenName": "Sneha Gupta",
+    "createdAt": "2025-11-01T08:15:00Z"
+  },
+  {
+    "title": "Garbage not collected for 4 days",
+    "description": "The municipal garbage collection has not happened in our area for the past 4 days. Garbage is piling up and creating a health hazard.",
+    "category": "GARBAGE",
+    "status": "PENDING",
+    "priority": "HIGH",
+    "location": "Koramangala 4th Block, 8th Main Road",
+    "citizenName": "Vikram Singh",
+    "createdAt": "2025-10-29T16:45:00Z"
+  },
+  {
+    "title": "Broken manhole cover on footpath",
+    "description": "An open manhole on the footpath near HSR Layout Sector 2 is extremely dangerous. Someone could fall in during night time.",
+    "category": "ROAD",
+    "status": "RESOLVED",
+    "priority": "URGENT",
+    "location": "HSR Layout Sector 2, 27th Main Road",
+    "citizenName": "Anita Das",
+    "createdAt": "2025-10-25T09:20:00Z"
+  },
+  {
+    "title": "Water pipeline leakage",
+    "description": "There is continuous water leakage from the main pipeline near Whitefield. Water is being wasted 24/7 for the past week.",
+    "category": "WATER",
+    "status": "IN_PROGRESS",
+    "priority": "HIGH",
+    "location": "Whitefield Main Road, Near ITPL",
+    "citizenName": "Karthik Reddy",
+    "createdAt": "2025-10-26T11:30:00Z"
+  },
+  {
+    "title": "Power outage in residential area",
+    "description": "Entire Jayanagar 4th Block has been experiencing frequent power cuts lasting 2-3 hours each day for the past week.",
+    "category": "ELECTRICITY",
+    "status": "ASSIGNED",
+    "priority": "HIGH",
+    "location": "Jayanagar 4th Block, East End",
+    "citizenName": "Meera Joshi",
+    "createdAt": "2025-10-27T15:10:00Z"
+  },
+  {
+    "title": "Illegal garbage dumping spot",
+    "description": "People are illegally dumping garbage at the corner near Electronic City. This needs immediate cleanup and monitoring.",
+    "category": "GARBAGE",
+    "status": "PENDING",
+    "priority": "MEDIUM",
+    "location": "Electronic City Phase 1, Behind Tech Park",
+    "citizenName": "Rahul Verma",
+    "createdAt": "2025-10-31T12:40:00Z"
+  },
+  {
+    "title": "Road resurfacing needed urgently",
+    "description": "The entire stretch of road from Bannerghatta Road to Arekere has deteriorated badly with multiple potholes and cracks.",
+    "category": "ROAD",
+    "status": "PENDING",
+    "priority": "MEDIUM",
+    "location": "Bannerghatta Road to Arekere Gate",
+    "citizenName": "Priya Sharma",
+    "createdAt": "2025-11-01T10:25:00Z"
+  },
+  {
+    "title": "Street light pole damaged",
+    "description": "A street light pole near Malleshwaram market has been damaged and is tilting dangerously. It might fall during heavy rain.",
+    "category": "ELECTRICITY",
+    "status": "RESOLVED",
+    "priority": "HIGH",
+    "location": "Malleshwaram Market, 8th Cross",
+    "citizenName": "Amit Patel",
+    "createdAt": "2025-10-23T14:50:00Z"
+  },
+  {
+    "title": "Low water pressure issue",
+    "description": "Residents of Yeshwanthpur are experiencing very low water pressure making it difficult to use water for daily needs.",
+    "category": "WATER",
+    "status": "IN_PROGRESS",
+    "priority": "MEDIUM",
+    "location": "Yeshwanthpur, 3rd Main Road",
+    "citizenName": "Sneha Gupta",
+    "createdAt": "2025-10-28T07:30:00Z"
+  },
+  {
+    "title": "Overflowing garbage bins",
+    "description": "Public garbage bins near Cubbon Park are overflowing for the past 2 days. The smell is unbearable and attracting stray animals.",
+    "category": "GARBAGE",
+    "status": "ASSIGNED",
+    "priority": "HIGH",
+    "location": "Cubbon Park, Main Entrance",
+    "citizenName": "Vikram Singh",
+    "createdAt": "2025-10-30T09:15:00Z"
+  },
+  {
+    "title": "Road flooded after rain",
+    "description": "The underpass at Silk Board junction gets completely flooded even with light rain due to poor drainage. Vehicles cannot pass.",
+    "category": "ROAD",
+    "status": "PENDING",
+    "priority": "URGENT",
+    "location": "Silk Board Junction, Underpass",
+    "citizenName": "Anita Das",
+    "createdAt": "2025-11-01T18:20:00Z"
+  },
+  {
+    "title": "Transformer making loud noise",
+    "description": "The electrical transformer near our apartment in BTM Layout is making extremely loud buzzing noise and sparking occasionally.",
+    "category": "ELECTRICITY",
+    "status": "PENDING",
+    "priority": "URGENT",
+    "location": "BTM Layout 2nd Stage, Near Water Tank",
+    "citizenName": "Karthik Reddy",
+    "createdAt": "2025-11-02T06:45:00Z"
+  },
+  {
+    "title": "Contaminated water supply",
+    "description": "The water being supplied to Basaveshwaranagar has a strange smell and color. Multiple residents have reported stomach issues.",
+    "category": "WATER",
+    "status": "ASSIGNED",
+    "priority": "URGENT",
+    "location": "Basaveshwaranagar, 2nd Stage",
+    "citizenName": "Meera Joshi",
+    "createdAt": "2025-11-01T13:30:00Z"
+  },
+  {
+    "title": "Stray dogs attacking due to garbage",
+    "description": "Uncollected garbage near Yelahanka is attracting stray dogs in large numbers. They are becoming aggressive towards residents.",
+    "category": "GARBAGE",
+    "status": "IN_PROGRESS",
+    "priority": "HIGH",
+    "location": "Yelahanka New Town, Sector 1",
+    "citizenName": "Rahul Verma",
+    "createdAt": "2025-10-29T11:50:00Z"
+  },
+  {
+    "title": "Speed breaker needed urgently",
+    "description": "There have been 3 accidents in the past month near the school in Rajajinagar due to overspeeding. Speed breakers are urgently needed.",
+    "category": "ROAD",
+    "status": "RESOLVED",
+    "priority": "HIGH",
+    "location": "Rajajinagar, Near Government School",
+    "citizenName": "Priya Sharma",
+    "createdAt": "2025-10-20T16:30:00Z"
+  },
+  {
+    "title": "Street lights off during night",
+    "description": "All street lights in our locality in Sadashivanagar remain off throughout the night, making it unsafe for women and elderly.",
+    "category": "ELECTRICITY",
+    "status": "PENDING",
+    "priority": "HIGH",
+    "location": "Sadashivanagar, 10th Cross",
+    "citizenName": "Amit Patel",
+    "createdAt": "2025-11-01T20:15:00Z"
+  },
+  {
+    "title": "Broken water meter",
+    "description": "My water meter has been broken for 2 weeks showing incorrect readings. Need replacement to avoid overbilling.",
+    "category": "WATER",
+    "status": "PENDING",
+    "priority": "LOW",
+    "location": "Vijayanagar, House No. 245",
+    "citizenName": "Sneha Gupta",
+    "createdAt": "2025-10-27T14:20:00Z"
+  },
+  {
+    "title": "Hazardous waste dumped illegally",
+    "description": "Some construction waste and possibly hazardous materials have been dumped near the lake in Bellandur. Immediate action required.",
+    "category": "GARBAGE",
+    "status": "ASSIGNED",
+    "priority": "URGENT",
+    "location": "Bellandur Lake, Near ORR",
+    "citizenName": "Vikram Singh",
+    "createdAt": "2025-11-01T08:45:00Z"
+  }
+]
