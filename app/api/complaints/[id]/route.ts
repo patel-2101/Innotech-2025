@@ -5,12 +5,13 @@ import { requireAuth, requireRole } from '@/lib/auth';
 // GET /api/complaints/[id] - Get a specific complaint
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const user = await requireAuth(request);
     const complaint = await prisma.complaint.findUnique({
-      where: { id: params.id },
+      where: { id },
       include: {
         citizen: {
           select: {
@@ -73,9 +74,10 @@ export async function GET(
 // PATCH /api/complaints/[id] - Update a complaint
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const user = await requireRole(request, ['OFFICER', 'ADMIN']);
     const body = await request.json();
     
@@ -93,7 +95,7 @@ export async function PATCH(
     }
     
     const complaint = await prisma.complaint.update({
-      where: { id: params.id },
+      where: { id },
       data: updateData,
       include: {
         citizen: {
@@ -122,13 +124,14 @@ export async function PATCH(
 // DELETE /api/complaints/[id] - Delete a complaint
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     await requireRole(request, ['ADMIN']);
     
     await prisma.complaint.delete({
-      where: { id: params.id }
+      where: { id }
     });
     
     return NextResponse.json({

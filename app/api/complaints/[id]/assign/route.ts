@@ -5,9 +5,12 @@ import { requireRole } from '@/lib/auth';
 // POST /api/complaints/[id]/assign - Assign worker to complaint
 export async function POST(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    // Await params in Next.js 16+
+    const { id } = await params;
+    
     const user = await requireRole(request, ['OFFICER', 'ADMIN']);
     const body = await request.json();
     
@@ -35,7 +38,7 @@ export async function POST(
     // Create assignment
     const assignment = await prisma.assignment.create({
       data: {
-        complaintId: params.id,
+        complaintId: id,
         workerId,
         officerId: user.id,
         deadline: deadline ? new Date(deadline) : undefined,
@@ -60,7 +63,7 @@ export async function POST(
     
     // Update complaint status
     await prisma.complaint.update({
-      where: { id: params.id },
+      where: { id },
       data: { status: 'ASSIGNED' }
     });
     

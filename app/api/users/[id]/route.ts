@@ -5,13 +5,14 @@ import { requireRole, requireAuth } from '@/lib/auth';
 // GET /api/users/[id] - Get a specific user
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const currentUser = await requireAuth(request);
     
     // Users can view their own profile, officers and admins can view all
-    if (currentUser.id !== params.id && !['OFFICER', 'ADMIN'].includes(currentUser.role)) {
+    if (currentUser.id !== id && !['OFFICER', 'ADMIN'].includes(currentUser.role)) {
       return NextResponse.json(
         { success: false, error: 'Forbidden' },
         { status: 403 }
@@ -19,7 +20,7 @@ export async function GET(
     }
     
     const user = await prisma.user.findUnique({
-      where: { id: params.id },
+      where: { id },
       select: {
         id: true,
         phoneNumber: true,
@@ -55,14 +56,15 @@ export async function GET(
 // PATCH /api/users/[id] - Update a user
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const currentUser = await requireAuth(request);
     const body = await request.json();
     
     // Users can update their own profile, admins can update anyone
-    if (currentUser.id !== params.id && currentUser.role !== 'ADMIN') {
+    if (currentUser.id !== id && currentUser.role !== 'ADMIN') {
       return NextResponse.json(
         { success: false, error: 'Forbidden' },
         { status: 403 }
@@ -82,7 +84,7 @@ export async function PATCH(
     }
     
     const user = await prisma.user.update({
-      where: { id: params.id },
+      where: { id },
       data: updateData,
       select: {
         id: true,
@@ -113,13 +115,14 @@ export async function PATCH(
 // DELETE /api/users/[id] - Delete a user (Admin only)
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     await requireRole(request, ['ADMIN']);
     
     await prisma.user.delete({
-      where: { id: params.id }
+      where: { id }
     });
     
     return NextResponse.json({
