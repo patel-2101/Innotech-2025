@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { auth as firebaseAdmin } from 'firebase-admin/auth';
+import { adminAuth } from '@/lib/firebase-admin';
 import { prisma } from '@/lib/prisma-mock';
 import { signToken } from '@/lib/jwt';
 
@@ -8,11 +8,18 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { firebaseUid, phoneNumber, email, displayName, photoURL, idToken } = body;
 
-    // Verify Firebase ID token (in production)
-    // const decodedToken = await firebaseAdmin().verifyIdToken(idToken);
-    // if (!decodedToken) {
-    //   return NextResponse.json({ success: false, message: 'Invalid Firebase token' }, { status: 401 });
-    // }
+    // Verify Firebase ID token
+    if (idToken) {
+      try {
+        const decodedToken = await adminAuth.verifyIdToken(idToken);
+        if (!decodedToken || decodedToken.uid !== firebaseUid) {
+          return NextResponse.json({ success: false, message: 'Invalid Firebase token' }, { status: 401 });
+        }
+      } catch (error) {
+        console.error('Token verification error:', error);
+        return NextResponse.json({ success: false, message: 'Token verification failed' }, { status: 401 });
+      }
+    }
 
     // Check if user exists
     let user = await prisma.user.findFirst({
